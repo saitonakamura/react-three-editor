@@ -2,6 +2,7 @@ import { useCommandBar } from "@editable-jsx/commander"
 import { useEditor } from "@editable-jsx/editable"
 import { LeftPanelGroup, RightPanelGroup } from "@editable-jsx/panels"
 import { Floating, Icon, styled } from "@editable-jsx/ui"
+import { toggleSession } from "@react-three/xr"
 
 const StyledIcon = styled(Icon, {})
 
@@ -144,8 +145,17 @@ function BottomBar({
         <Icon icon="ph:command-duotone" fontSize={16} />
       </StyledButtonGroupButton>
       <StyledButtonGroupButton
-        onClick={() => editor.send("TOGGLE_MODE")}
+        onClick={() => {
+          editor.send("TOGGLE_MODE")
+        }}
         active={mode === "playing"}
+      >
+        <Icon icon="ph:play-fill" fontSize={16} />
+      </StyledButtonGroupButton>
+      <StyledButtonGroupButton
+        onClick={() => {
+          toggleSession("immersive-vr")
+        }}
       >
         <Icon icon="ph:play-fill" fontSize={16} />
       </StyledButtonGroupButton>

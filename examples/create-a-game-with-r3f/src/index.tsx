@@ -1,9 +1,10 @@
 import "@editable-jsx/rapier"
-import { KeyboardControls } from "@react-three/drei"
+import { VRButton, XR } from "@react-three/xr"
 import { Canvas } from "@react-three/fiber"
 import ReactDOM from "react-dom/client"
 import Experience from "./Experience"
 import "./style.css"
+import { XRControls } from "./XRControls"
 const root = ReactDOM.createRoot(document.querySelector("#root"))
 
 export function Window({ children }: { children: React.ReactNode }) {
@@ -11,30 +12,8 @@ export function Window({ children }: { children: React.ReactNode }) {
 }
 
 root.render(
-  <KeyboardControls
-    map={[
-      {
-        name: "forward",
-        keys: ["KeyW", "ArrowUp"]
-      },
-      {
-        name: "backward",
-        keys: ["KeyS", "ArrowDown"]
-      },
-      {
-        name: "leftward",
-        keys: ["KeyA", "ArrowLeft"]
-      },
-      {
-        name: "rightward",
-        keys: ["KeyD", "ArrowRight"]
-      },
-      {
-        name: "jump",
-        keys: ["Space"]
-      }
-    ]}
-  >
+  <>
+    {/* <VRButton /> */}
     <Canvas
       ref={(node) => {
         console.log("hereee")
@@ -47,7 +26,34 @@ root.render(
         position: [2.5, 4, 6]
       }}
     >
-      <Experience />
+      <XR>
+        <XRControls
+          map={[
+            {
+              name: "forward",
+              keys: ["xr-standard-thumbstick_yAxis_negative"]
+            },
+            {
+              name: "backward",
+              keys: ["xr-standard-thumbstick_yAxis_positive"]
+            },
+            {
+              name: "leftward",
+              keys: ["xr-standard-thumbstick_xAxis_negative"]
+            },
+            {
+              name: "rightward",
+              keys: ["xr-standard-thumbstick_xAxis_positive"]
+            },
+            {
+              name: "jump",
+              keys: ["a-button"]
+            }
+          ]}
+        >
+          <Experience />
+        </XRControls>
+      </XR>
     </Canvas>
     {/* <Window>
       <div className="App">
@@ -68,5 +74,5 @@ root.render(
       </div>
     </Window>
     <ImageList /> */}
-  </KeyboardControls>
+  </>
 )

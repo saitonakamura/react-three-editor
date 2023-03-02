@@ -1,4 +1,3 @@
-import { useKeyboardControls } from "@react-three/drei"
 import { useEditor } from "@react-three/editor"
 import { addPlugin } from "@react-three/editor/src/plugins"
 import { useFrame } from "@react-three/fiber"
@@ -6,6 +5,7 @@ import { RigidBody, RigidBodyApi, useRapier } from "@react-three/rapier"
 import { useEffect, useRef } from "react"
 import * as THREE from "three"
 import { memo } from "./memo"
+import { useXRControls } from "./XRControls"
 
 addPlugin({
   applicable: (e) => e.type === "icosahedronGeometry",
@@ -48,7 +48,7 @@ addPlugin({
 })
 
 export function Player() {
-  const [subscribeKeys, getKeys] = useKeyboardControls()
+  const [subscribeKeys, getKeys] = useXRControls()
   const body = useRef<RigidBodyApi>(null)
   const { rapier, world } = useRapier()
   const rapierWorld = world.raw()

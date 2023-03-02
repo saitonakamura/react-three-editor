@@ -155,10 +155,12 @@ importers:
       '@react-three/editor': workspace:*
       '@react-three/fiber': ^8.8.9
       '@react-three/rapier': 0.9.0
+      '@react-three/xr': ^5.2.0
       '@types/react': ^18.0.0
       '@types/react-reconciler': ^0.28.0
       '@types/styled-components': ^5.1.24
       '@use-gesture/react': latest
+      '@vitejs/plugin-basic-ssl': ^1.0.1
       '@vitejs/plugin-react': ^2.0.1
       draft-n-draw: ^0.3.1
       leva: ^0.9.34
@@ -185,8 +187,10 @@ importers:
       '@react-three/drei': 9.46.4_xa6xk36nauwxkzngvitxgjpnr4
       '@react-three/editor': link:../../packages/three-fiber
       '@react-three/fiber': 8.9.1_pvdsq7s4d5knbxbfttptgjiz3a
+      '@react-three/xr': 5.2.0_7l5c7g5ph6e5ybhvldx3hsiylq
       '@types/react-reconciler': 0.28.0
-      '@use-gesture/react': 10.2.23_react@18.2.0
+      '@use-gesture/react': 10.2.24_react@18.2.0
+      '@vitejs/plugin-basic-ssl': 1.0.1_vite@3.2.5
       react: 18.2.0
       react-dom: 18.2.0_react@18.2.0
       react-merge-refs: 1.1.0
@@ -1011,6 +1015,7 @@ importers:
       '@radix-ui/react-popover': ^1.0.2
       '@react-three/drei': ^9.46.4
       '@react-three/rapier': ^0.10.0
+      '@react-three/xr': ^5.2.0
       '@stitches/react': ^1.2.8
       '@types/babel__core': ^7.1.20
       '@types/babel__generator': ^7.6.4
@@ -1071,6 +1076,7 @@ importers:
       '@radix-ui/react-icons': 1.1.1_react@18.2.0
       '@radix-ui/react-popover': 1.0.2_biqbaboplfbrettd7655fr4n2y
       '@react-three/drei': 9.51.3_biqbaboplfbrettd7655fr4n2y
+      '@react-three/xr': 5.2.0_react@18.2.0
       '@stitches/react': 1.2.8_react@18.2.0
       '@types/babel__generator': 7.6.4
       '@types/react-virtualized-auto-sizer': 1.0.1
@@ -4909,7 +4915,7 @@ packages:
       '@babel/runtime': 7.20.6
       '@react-spring/three': 9.5.5_7l5c7g5ph6e5ybhvldx3hsiylq
       '@react-three/fiber': 8.9.1_pvdsq7s4d5knbxbfttptgjiz3a
-      '@use-gesture/react': 10.2.23_react@18.2.0
+      '@use-gesture/react': 10.2.24_react@18.2.0
       detect-gpu: 5.0.1
       glsl-noise: 0.0.0
       lodash.clamp: 4.0.3
@@ -5235,6 +5241,32 @@ packages:
       three-stdlib: 2.20.4_three@0.147.0
       use-asset: 1.0.4_react@18.2.0
     dev: true
+
+  /@react-three/xr/5.2.0_7l5c7g5ph6e5ybhvldx3hsiylq:
+    resolution: {integrity: sha512-I8ho/yQKkIQX71owM0fGKRTwzeccU4QjnRRnZEIjdI9d7PVnVdq4NAWfct2NJOnC21T5PgvOSjarKtRF9NQp9w==}
+    peerDependencies:
+      '@react-three/fiber': '>=8.0.0'
+      react: '>=18.0'
+      three: '>=0.141'
+    dependencies:
+      '@react-three/fiber': 8.9.1_pvdsq7s4d5knbxbfttptgjiz3a
+      react: 18.2.0
+      three: 0.147.0
+      three-stdlib: 2.21.8_three@0.147.0
+      zustand: 3.7.2_react@18.2.0
+    dev: false
+
+  /@react-three/xr/5.2.0_react@18.2.0:
+    resolution: {integrity: sha512-I8ho/yQKkIQX71owM0fGKRTwzeccU4QjnRRnZEIjdI9d7PVnVdq4NAWfct2NJOnC21T5PgvOSjarKtRF9NQp9w==}
+    peerDependencies:
+      '@react-three/fiber': '>=8.0.0'
+      react: '>=18.0'
+      three: '>=0.141'
+    dependencies:
+      react: 18.2.0
+      three-stdlib: 2.21.8
+      zustand: 3.7.2_react@18.2.0
+    dev: false
 
   /@remix-run/router/1.2.0:
     resolution: {integrity: sha512-GO82KYYTWPRCgdNtnheaZG3LcViUlxRFlHM7ykh7N+ufoXi6PVIHoP+9RUG/vuzl2hr9i/h6EA1Eq+2HpqJ0gQ==}
@@ -6201,6 +6233,10 @@ packages:
 
   /@use-gesture/core/10.2.23:
     resolution: {integrity: sha512-Ynap/Uh6RX1Vgn3zNmFTyKapapdf7Av+GzAe6h+RsBZaxMF1z3cK6aohHPJP6T1hLrPyH/yehxa7RBqyESG9RA==}
+    dev: false
+
+  /@use-gesture/core/10.2.24:
+    resolution: {integrity: sha512-ZL7F9mgOn3Qlnp6QLI9jaOfcvqrx6JPE/BkdVSd8imveaFTm/a3udoO6f5Us/1XtqnL4347PsIiK6AtCvMHk2Q==}
 
   /@use-gesture/react/10.2.23_react@18.2.0:
     resolution: {integrity: sha512-anj9j3Lm4l+/s60Jv1FD2m13r+T+aYstSHUT62hTugojM64LPe9XatfEVHRyWOrGjRU2buQhlm03xN8oxkg/OQ==}
@@ -6208,6 +6244,15 @@ packages:
       react: '>= 16.8.0'
     dependencies:
       '@use-gesture/core': 10.2.23
+      react: 18.2.0
+    dev: false
+
+  /@use-gesture/react/10.2.24_react@18.2.0:
+    resolution: {integrity: sha512-rAZ8Nnpu1g4eFzqCPlaq+TppJpMy0dTpYOQx5KpfoBF4P3aWnCqwj7eKxcmdIb1NJKpIJj50DPugUH4mq5cpBg==}
+    peerDependencies:
+      react: '>= 16.8.0'
+    dependencies:
+      '@use-gesture/core': 10.2.24
       react: 18.2.0
 
   /@vinxi/recast/0.21.5:
@@ -6218,6 +6263,15 @@ packages:
       esprima: 4.0.1
       source-map: 0.6.1
       tslib: 2.4.1
+    dev: false
+
+  /@vitejs/plugin-basic-ssl/1.0.1_vite@3.2.5:
+    resolution: {integrity: sha512-pcub+YbFtFhaGRTo1832FQHQSHvMrlb43974e2eS8EKleR3p1cDdkJFPci1UhwkEf1J9Bz+wKBSzqpKp7nNj2A==}
+    engines: {node: '>=14.6.0'}
+    peerDependencies:
+      vite: ^3.0.0 || ^4.0.0
+    dependencies:
+      vite: 3.2.5
     dev: false
 
   /@vitejs/plugin-react/1.3.2:
@@ -13481,7 +13535,7 @@ packages:
       '@radix-ui/react-portal': 0.1.4_biqbaboplfbrettd7655fr4n2y
       '@radix-ui/react-tooltip': 0.1.6_biqbaboplfbrettd7655fr4n2y
       '@stitches/react': 1.2.8_react@18.2.0
-      '@use-gesture/react': 10.2.23_react@18.2.0
+      '@use-gesture/react': 10.2.24_react@18.2.0
       colord: 2.9.3
       dequal: 2.0.3
       merge-value: 1.0.0
@@ -18282,6 +18336,43 @@ packages:
       potpack: 1.0.2
       three: 0.147.0
       zstddec: 0.0.2
+
+  /three-stdlib/2.21.8:
+    resolution: {integrity: sha512-kqisiKvO4mSy59v5vWqBQSH8famLxp7Z51LxpMJI9GwDxqODaW02rhIwmjYDEzZWNFpjZpoDHVGbdpeHf8h3SA==}
+    peerDependencies:
+      three: '>=0.122.0'
+    dependencies:
+      '@babel/runtime': 7.20.6
+      '@types/offscreencanvas': 2019.7.0
+      '@webgpu/glslang': 0.0.15
+      chevrotain: 10.4.2
+      draco3d: 1.5.5
+      fflate: 0.6.10
+      ktx-parse: 0.4.5
+      mmd-parser: 1.0.4
+      opentype.js: 1.3.4
+      potpack: 1.0.2
+      zstddec: 0.0.2
+    dev: false
+
+  /three-stdlib/2.21.8_three@0.147.0:
+    resolution: {integrity: sha512-kqisiKvO4mSy59v5vWqBQSH8famLxp7Z51LxpMJI9GwDxqODaW02rhIwmjYDEzZWNFpjZpoDHVGbdpeHf8h3SA==}
+    peerDependencies:
+      three: '>=0.122.0'
+    dependencies:
+      '@babel/runtime': 7.20.6
+      '@types/offscreencanvas': 2019.7.0
+      '@webgpu/glslang': 0.0.15
+      chevrotain: 10.4.2
+      draco3d: 1.5.5
+      fflate: 0.6.10
+      ktx-parse: 0.4.5
+      mmd-parser: 1.0.4
+      opentype.js: 1.3.4
+      potpack: 1.0.2
+      three: 0.147.0
+      zstddec: 0.0.2
+    dev: false
 
   /three/0.147.0:
     resolution: {integrity: sha512-LPTOslYQXFkmvceQjFTNnVVli2LaVF6C99Pv34fJypp8NbQLbTlu3KinZ0zURghS5zEehK+VQyvWuPZ/Sm8fzw==}

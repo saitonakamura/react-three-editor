@@ -7,14 +7,16 @@
     "serve": "vite preview"
   },
   "dependencies": {
+    "@editable-jsx/rapier": "workspace:*",
     "@react-spring/core": "^9.4.4",
     "@react-spring/three": "^9.4.4",
     "@react-three/drei": "^9.46.4",
-    "@editable-jsx/rapier": "workspace:*",
     "@react-three/editor": "workspace:*",
     "@react-three/fiber": "^8.8.9",
+    "@react-three/xr": "^5.2.0",
     "@types/react-reconciler": "^0.28.0",
     "@use-gesture/react": "latest",
+    "@vitejs/plugin-basic-ssl": "^1.0.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-merge-refs": "^1.1.0",
